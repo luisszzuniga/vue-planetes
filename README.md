@@ -1,6 +1,7 @@
 # vue-project
 
-This template should help get you started developing with Vue 3 in Vite.
+Ceci est un projet d'école qui répertorie les différentes planètes de notre système solaire avec une fonctionalité permettant d'ajouter des planètes en favori !
+Il y a aussi une page qui représente le planètes du système solaire dans l'ordre.
 
 ## Recommended IDE Setup
 
