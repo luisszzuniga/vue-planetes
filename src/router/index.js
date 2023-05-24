@@ -13,6 +13,11 @@ const router = createRouter({
       path: '/planet/:id',
       name: 'Planet',
       component: () => import('../views/PlanetView.vue')
+    },
+    {
+      path: '/solar-system',
+      name: 'Solar System',
+      component: () => import('../views/SolarSystemView.vue')
     }
   ]
 })
