@@ -15,7 +15,7 @@ import { usePlanetsStore } from "./stores/planets";
 export default {
   data() {
     return {
-      plantesStore: usePlanetsStore()
+      planetsStore: usePlanetsStore()
     }
   },
 
@@ -27,7 +27,7 @@ export default {
   mounted() {
     SolarSystemService.get("/rest/bodies")
     .then((response) => {
-      plantesStore.setPlanets(response.data);
+      this.planetsStore.setPlanets(response.data.bodies);
     })
     .catch((error) => {
       console.log(error);
