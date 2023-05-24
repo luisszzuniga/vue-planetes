@@ -28,7 +28,6 @@ export default {
             const planets = this.planetsStore.getPlanets.sort((a, b) => {
                 return a.semimajorAxis - b.semimajorAxis;
             })
-            console.log(planets)
             return planets;
         },
     }
