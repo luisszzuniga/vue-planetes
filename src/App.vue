@@ -24,7 +24,7 @@ export default {
     AppNavbar
   },
 
-  mounted() {
+  created() {
     SolarSystemService.get("/rest/bodies")
     .then((response) => {
       this.planetsStore.setPlanets(response.data.bodies);
@@ -36,5 +36,5 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 </style>
