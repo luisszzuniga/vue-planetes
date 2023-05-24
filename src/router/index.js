@@ -18,6 +18,11 @@ const router = createRouter({
       path: '/solar-system',
       name: 'Solar System',
       component: () => import('../views/SolarSystemView.vue')
+    },
+    {
+      path: '/favourite-planets',
+      name: 'Favourite Planets',
+      component: () => import('../views/FavouritePlanetsView.vue')
     }
   ]
 })

@@ -21,13 +21,30 @@
             <RouterLink class="text-blue-500 hover:text-blue-600 transition duration-200 inline-block mt-4" :to="'/planet/' + planet.id">
                 Plus d'informations &rarr;
             </RouterLink>
+
+
+            <div class="underline cursor-pointer">
+                <span v-if="planetsStore.getFavouritePlanetIndex(planet) === -1" @click="planetsStore.addFavouritePlanet(planet)">
+                    Ajouter aux favoris
+                </span>
+                <span v-else @click="planetsStore.removeFavouritePlanet(planet)">
+                    Retirer des favoris
+                </span>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
+import { usePlanetsStore } from '../stores/planets'
 export default {
-    props: ['planet']
+    props: ['planet'],
+
+    data() {
+        return {
+            planetsStore: usePlanetsStore()
+        }
+    }
 }
 </script>
 

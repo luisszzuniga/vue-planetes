@@ -5,11 +5,16 @@ export const usePlanetsStore = defineStore({
 
     state: () => ({
         planets: [],
+        favouritePlanets: []
     }),
 
     getters: {
         getPlanets(state) {
             return state.planets;
+        },
+
+        getFavouritePlanets(state) {
+            return state.favouritePlanets;
         }
     },
 
@@ -26,6 +31,24 @@ export const usePlanetsStore = defineStore({
             if (planet.length > 0) return planet[0];
             
             return null;
+        },
+
+        addFavouritePlanet(planet) {
+            const index = this.getFavouritePlanetIndex(planet);
+            if (index === -1) {
+              this.favouritePlanets.push(planet);
+            }
+        },
+
+        removeFavouritePlanet(planet) {
+            const index = this.getFavouritePlanetIndex(planet);
+            if (index !== -1) {
+                this.favouritePlanets.splice(index, 1);
+            }
+        },
+        
+        getFavouritePlanetIndex(planet) {
+            return this.favouritePlanets.findIndex(favouritePlanet => favouritePlanet.id === planet.id);
         }
     },
 });
