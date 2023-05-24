@@ -1,4 +1,4 @@
-const axios = require('axios');
+const axios = require('axios').default;
 
 const baseURL = 'https://api.example.com';
 
@@ -7,3 +7,5 @@ const NASAService = axios.create({
 });
 
 export default NASAService;
+
+export { NASAService };
