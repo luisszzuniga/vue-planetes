@@ -23,27 +23,19 @@
             </RouterLink>
 
 
-            <div class="underline cursor-pointer">
-                <span v-if="planetsStore.getFavouritePlanetIndex(planet) === -1" @click="planetsStore.addFavouritePlanet(planet)">
-                    Ajouter aux favoris
-                </span>
-                <span v-else @click="planetsStore.removeFavouritePlanet(planet)">
-                    Retirer des favoris
-                </span>
-            </div>
+            <FavouriteComponent :planet="planet" />
         </div>
     </div>
 </template>
 
 <script>
-import { usePlanetsStore } from '../stores/planets'
+import FavouriteComponent from './FavouriteComponent.vue';
+
 export default {
     props: ['planet'],
 
-    data() {
-        return {
-            planetsStore: usePlanetsStore()
-        }
+    components: {
+        FavouriteComponent
     }
 }
 </script>

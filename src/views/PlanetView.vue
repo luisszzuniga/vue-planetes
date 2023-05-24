@@ -8,6 +8,8 @@
       </div>
 
       <div class="bg-white w-1/2 mx-auto p-4 shadow-md mt-10">
+
+
         <p v-if="planet.alternativeName">
           <span class="font-bold">Alternative name: </span>{{ planet.alternativeName }}
         </p>
@@ -37,6 +39,8 @@
             </li>
           </ul>
         </p>
+
+        <FavouriteComponent class="mt-10" :planet="planet" />
       </div>
     </main>
   </div>
@@ -46,6 +50,7 @@
 import { defineComponent } from 'vue'
 import { RouterLink } from 'vue-router'
 import { usePlanetsStore } from '../stores/planets'
+import FavouriteComponent from '../components/FavouriteComponent.vue'
 
 export default defineComponent({
   data() {
@@ -69,7 +74,8 @@ export default defineComponent({
   },
 
   components: {
-    RouterLink
+    RouterLink,
+    FavouriteComponent
   }
 })
 </script>
